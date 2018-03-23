@@ -3,7 +3,7 @@ function onReady(){
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
 
-  addToDoForm.addEventListener()'submit', event => {
+  addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
 
     let title = newToDoText.value;
@@ -26,6 +26,6 @@ function onReady(){
 
 
 window.onload = function() {
-onReady();
+  onReady();
 
 };
