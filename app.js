@@ -13,7 +13,11 @@ function onReady(){
     let checkbox = document.createElement('input');
 
     checkbox.type = "checkbox";
-
+checkbox.addEventListener( 'click', event => {
+  const item = event.target.parentNode;
+  const list = item.parentNode
+  list.removeChild(item);
+});
     newLi.textContent = title;
 
     newLi.appendChild(checkbox);

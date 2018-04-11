@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
    <head>
+     <style media="screen">
+       ul#toDoList li {
+         list-style: none;
+       }
+     </style>
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <title>To-Do App</title>
    </head>
@@ -11,10 +16,8 @@
        <label for="newToDoText">New To-Do:</label>
        <input type="text" id="newToDoText">
        <button type="submit">Add To-Do!</button>
-       <button type="delete">Delete Completed To-Dos!</button>
      </form>
-
-     <ul id="toDoList">
+         <ul id="toDoList">
      </ul>
 
      <script src="app.js"></script>
