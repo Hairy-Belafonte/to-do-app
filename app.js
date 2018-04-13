@@ -12,6 +12,8 @@ function onReady(){
 
     let checkbox = document.createElement('input');
 
+    checkbox.type = 'checkbox';
+
     newLi.textContent = title;
 
     newLi.appendChild(checkbox);
