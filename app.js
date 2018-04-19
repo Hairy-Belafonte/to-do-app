@@ -1,27 +1,42 @@
 function onReady(){
+  let toDos = [];
   const addToDoForm = document.getElementById('addToDoForm');
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
 
-  addToDoForm.addEventListener('submit', event => {
-    event.preventDefault();
+  function createNewToDo() {
+    if (!newToDoText.value) { return; }
+    
+    toDos.push({
+       title: newToDoText.value,
+       complete: false
+     });
+   }
+   function renderTheUI() {
+      const toDoList = document.getElementById('toDoList');
 
-    let title = newToDoText.value;
+      toDoList.textContent = '';
 
-    let newLi = document.createElement('li');
+      renderTheUI();
 
-    let checkbox = document.createElement('input');
+      toDos.forEach(function(toDo) {
+        const newToDo = document.createElement('li');
 
-    checkbox.type = 'checkbox';
+       const checkbox = document.createElement('input');
+       checkbox.type = "checkbox";
 
-    newLi.textContent = title;
+       title.textContent = toDo.title;
 
-    newLi.appendChild(checkbox);
-
-    toDoList.appendChild(newLi);
-
-    newToDoText.value = '';
-  });
+       toDoList.appendChild(newToDo);
+       newToDo.appendChild(checkbox);
+     });
+   }
+   addToDoForm.addEventListener('submit', event => {
+     event.preventDefault();
+     createNewToDo();
+     newToDoText.value = '';
+   });
+   renderTheUI();
 }
 
 
